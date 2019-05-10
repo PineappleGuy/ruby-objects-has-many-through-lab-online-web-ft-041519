@@ -26,7 +26,6 @@ class Artist
     Song.all.each do |song|
       @song << song
     end
-    @songs
   end
 
   def genres
