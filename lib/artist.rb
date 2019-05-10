@@ -7,8 +7,7 @@ class Artist
   @@songs = []
   @@genres = []
   def initialize(name)
-    @name = name
-
+    @name = name 
     @@all << self
   end
 
@@ -24,10 +23,14 @@ class Artist
   end
 
   def songs
+    @songs = []
+    Song.all.each do |song|
+      @song << song
+    end
     @songs
   end
 
   def genres
-    @genres
+    
   end
 end
