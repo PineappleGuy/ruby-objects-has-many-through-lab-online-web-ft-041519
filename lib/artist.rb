@@ -4,10 +4,11 @@ class Artist
   attr_accessor :name
 
   @@all = []
-  @@genres = []
+
   def initialize(name)
     @name = name
     @songs = []
+    @genres = []
     @@all << self
   end
 
@@ -32,6 +33,10 @@ class Artist
   end
 
   def genres
-
+    Song.all.each do |song|
+      if song.artist == self
+        @genres << song.genre
+      end
+      @genres
   end
 end
