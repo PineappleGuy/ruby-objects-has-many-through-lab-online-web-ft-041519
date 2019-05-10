@@ -1,40 +1,40 @@
 class Patient
 
-    attr_accessor :name
+  attr_accessor :name
 
-    @@all = []
+  @@all = []
 
-    def initialize(name)
-      @name = name
-      @appointments = []
-      @doctors = []
-      @@all << self
-    end
+  def initialize(name)
+    @name = name
+    @appointments = []
+    @doctors = []
+    @@all << self
+  end
 
-    def self.all
-      @@all
-    end
+  def self.all
+    @@all
+  end
 
-    def new_appointment(doctor, date)
-      Appointment.new(date, self, doctor)
-    end
+  def new_appointment(doctor, date)
+    Appointment.new(date, self, doctor)
+  end
 
-    def appointments
-      Appointment.all.each do |appointment|
-        if appointment.patient == self
-          @appointments << appointment
-        end
+  def appointments
+    Appointment.all.each do |appointment|
+      if appointment.patient == self
+        @appointments << appointment
       end
-      @appointments
     end
+    @appointments
+  end
 
-    def doctors
-      Appointment.all.each do |appointment|
-        if appointment.patient == self
-          @doctors << appointment.doctor
-        end
+  def doctors
+    Appointment.all.each do |appointment|
+      if appointment.patient == self
+        @doctors << appointment.doctor
       end
-      @doctors
     end
+    @doctors
+  end
 
 end
