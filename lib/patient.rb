@@ -6,6 +6,7 @@ class Patient
 
     def initialize(name)
       @name = name
+      @appointments = []
       @@all << self
     end
 
@@ -15,5 +16,14 @@ class Patient
 
     def new_appointment(doctor, date)
       Appointment.new(date, self, doctor)
+    end
+
+    def appointments
+      Appointment.all.each do |appointment|
+        if appointment.patient == self
+          @appointments << appointment
+        end
+      end
+      @appointments
     end
 end
