@@ -21,7 +21,7 @@ class Genre
 
   def artists
     Song.all do |song|
-      
+    end
   end
 
 end
