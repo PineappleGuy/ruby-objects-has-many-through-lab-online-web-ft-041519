@@ -36,7 +36,6 @@ class Doctor
       end
     end
     @patients
-    binding.pry
   end
 
 end
