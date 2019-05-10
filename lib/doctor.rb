@@ -20,14 +20,21 @@ class Doctor
   end
 
   def appointments
+    Appointment.all.each do |appointment|
+      if appointment.doctor == self
+        @appointments << appointment
+      end
+    end
     @appointments
   end
 
   def patients
-    @appointments.each do |appointment|
-      @patients << appointment.patient
+    Appointment.all.each do |appointment|
+      if appointment.doctor == self
+        @patients << appointment.patient
+      end
     end
-  @patients
+    @patients
   end
 
 end
