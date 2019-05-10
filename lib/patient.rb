@@ -7,6 +7,7 @@ class Patient
     def initialize(name)
       @name = name
       @appointments = []
+      @doctors = []
       @@all << self
     end
 
@@ -26,4 +27,14 @@ class Patient
       end
       @appointments
     end
+
+    def doctors
+      Appointment.all.each do |appointment|
+        if appointment.patient == self
+          @doctors << appointment.doctor
+        end
+      end
+      @doctors
+    end
+
 end
