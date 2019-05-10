@@ -18,9 +18,6 @@ class Artist
 
   def new_song(name, genre)
     Song.new(name, self, genre)
-    #@@songs << song
-    #@@genres << genre
-  #binding.pry
   end
 
   def songs
@@ -37,7 +34,7 @@ class Artist
       if song.artist == self
         @genres << song.genre.name
       end
-      @genres
     end
+    @genres
   end
 end
