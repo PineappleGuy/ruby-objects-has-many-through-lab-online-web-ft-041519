@@ -25,7 +25,7 @@ class Doctor
 
   def patients
     @appointments.each do |appointment|
-      @patients << appointment.patient 
+      @patients << appointment.patient
     end
   @patients
   end
