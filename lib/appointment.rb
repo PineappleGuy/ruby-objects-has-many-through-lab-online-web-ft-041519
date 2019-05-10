@@ -15,4 +15,11 @@ attr_accessor :date, :patient, :doctor
     @@all
   end
 
+  def patient
+    @patient
+  end
+
+  def artist
+    @artist
+  end
 end
